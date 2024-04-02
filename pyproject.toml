@@ -1,0 +1,12 @@
+[project]
+name = "apmake"
+version = "0.0.1"
+dependencies = [
+    'importlib-metadata; python_version<"3.10"',
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["apmake"]
+exclude = ["scratch"]
+namespaces = false
