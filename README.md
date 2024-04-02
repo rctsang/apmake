@@ -53,5 +53,20 @@ so that's done and seems to work for the most part.
 ## Todo
 
 [ ] Fix `resolve_reqs` so that `@recurse` will always cause that rule's dependencies to be resolved recursively (checks the entire subtree for outdated dependencies rather than just the top)
+[ ] Verify dependency graph is a DAG (doesn't do that now, probably not good.)
+[x] ~~Double check if the BFS I wrote for finding dependency tree and topological ordering is actually a topological ordering.~~ it should, since it's a partial tree with one root node, so all of it should just correspond to depth
+[ ] Fix the `resolve_reqs` algorithm to take into account the order that dependencies are listed for a rule.
 
+## Helpful Links
+
+- [python decorators](https://realpython.com/primer-on-python-decorators)
+- [python singletons](https://www.geeksforgeeks.org/singleton-pattern-in-python-a-complete-guide/)
+- [python operator overloading](https://docs.python.org/3/reference/datamodel.html)
+- [topological sort](https://en.wikipedia.org/wiki/Topological_sorting)
+- [task scheduling with dependency](https://stackoverflow.com/questions/18314250/)
+- [optimal job scheduling](https://en.wikipedia.org/wiki/Optimal_job_scheduling)
+- [sqlite3](https://docs.python.org/3/library/sqlite3.html)
+- [build system rules and algorithms](https://gittup.org/tup/build_system_rules_and_algorithms.pdf) (tup)
+- [tup](https://github.com/gittup/tup)
+- [BFS for topological sort](https://stackoverflow.com/questions/25229624)
 
