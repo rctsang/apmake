@@ -31,6 +31,33 @@ for target in TARGETS:
 
 so yes much of this will be utilizing decorators. hopefully we wind up with something with the same expressive power as make, but with much more flexibility and is more intuitive to use coming from make.
 
+## Installation and Usage
+
+It's not on PyPI (yet) so gotta do it the old fashioned way.
+
+```
+pip install -e .
+```
+
+Then create Makefile-equivalents (named whatever you want, i haven't thought of a good name and idk if calling everything `apmake.py` is a great idea, as much as i would like to. suggestions welcome.) that look something like the following (see also `examples/simple.py`)
+
+```py
+#!/usr/bin/env python3
+from apmake import *
+
+@rule(target="example")
+def example():
+	Command('echo "hello world!"')
+
+# ...
+```
+
+Then invoke the script with desired target the same-ish way as Make:
+
+```console
+$ ./apmakefile example
+hello world!
+```
 
 ## Notes to Self
 
