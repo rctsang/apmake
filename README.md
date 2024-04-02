@@ -14,7 +14,7 @@ for example, instead of this terrifying thing:
 define GEN_CD_MAKE_RULE
 .PHONY: $(target)
 $(target)::
-	cd $$(dir $$@) && make
+    cd $$(dir $$@) && make
 endef
 
 $(foreach target, $(TARGETS), $(eval $(GEN_CD_MAKE_RULE)))
@@ -23,10 +23,10 @@ $(foreach target, $(TARGETS), $(eval $(GEN_CD_MAKE_RULE)))
 do something more like
 ```py
 for target in TARGETS:
-	@rule(name=target)
-	def action():
-		# do things
-		Command('echo "doing things"')
+    @rule(name=target)
+    def action():
+        # do things
+        Command('echo "doing things"')
 ```
 
 so yes much of this will be utilizing decorators. hopefully we wind up with something with the same expressive power as make, but with much more flexibility and is more intuitive to use coming from make.
@@ -47,7 +47,7 @@ from apmake import *
 
 @rule(target="example")
 def example():
-	Command('echo "hello world!"')
+    Command('echo "hello world!"')
 
 # ...
 ```
